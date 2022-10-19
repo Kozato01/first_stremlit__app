@@ -1,5 +1,5 @@
 import streamlit
 
 streamlit.title('My Parents New Healthy Diner')
-steamlit.text('CARAIO COMEDIIA')
-steamlit.text('ZZZZZZZZZZZZ')
+streamlit.text('CARAIO COMEDIIA')
+streamlit.text('ZZZZZZZZZZZZ')
