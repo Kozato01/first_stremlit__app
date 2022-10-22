@@ -26,5 +26,7 @@ import requests
 
 fruityvice_repsonse = requests.get("https://fruityvice.com/api/fruit/kiwi")
 
-fruityvice_normalized = pandas.json_normalize(fruityvice_repsonse.json()) 
+fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
+fruityvice_normalized = pandas.json_normalize(fruityvice_normalized)
+
 streamlit.dataframe(fruityvice_normalized)
