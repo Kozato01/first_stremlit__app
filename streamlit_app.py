@@ -21,12 +21,9 @@ fruits_show = my_fruit2.loc[fruits_select]
 streamlit.dataframe(fruits_show)
 
 #New scena
-streamlit.header("Fruityvice Fruit Advice!")
-
+streamlit.header('Fruityvice Fruit Advice!')
 import requests
 
-fruityvice_response = requests.get("https://fruityvice.com/api/fruit/"+"kiwi")
-# write your own comment -what does the next line do? 
-fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
-# write your own comment - what does this do?
+fruityvice_repsonse = requests.get("https://fruityvice.com/api/fruit/kiwi") 
+fruityvice_normalized = json_normalize(fruityvice_repsonse.json()) 
 streamlit.dataframe(fruityvice_normalized)
