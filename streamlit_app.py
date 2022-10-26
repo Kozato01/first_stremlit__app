@@ -41,4 +41,4 @@ my_data_rows = my_cur.fetchall()
 streamlit.header("The fruit load list contains:")
 streamlit.dataframe(my_data_rows)
 frut = ''
-add_my_fruti = steamlit.text_input(my_cur.execute("select [frut] from pc_rivery_db.public.fruit_load_list"))
+add_my_fruti = steamlit.text_input(my_cur.execute("select * from pc_rivery_db.public.fruit_load_list"))
