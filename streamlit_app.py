@@ -21,7 +21,7 @@ my_fruit2 = my_fruit.set_index('Fruit')
 fruits_select= streamlit.multiselect("Pick some fruits:", list(my_fruit2.index),["Apple", "Banana"])
 fruits_show = my_fruit2.loc[fruits_select]
                       
-#streamlit.dataframe(fruits_show)
+streamlit.dataframe(fruits_show)
 
 fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
 streamlit.write('The user entered ', fruit_choice)
@@ -34,17 +34,16 @@ fruityvice_normalized = pd.json_normalize(fruityvice_repsonse.json())
 streamlit.dataframe(fruityvice_normalized)
 
 #não rode anythingpast here, OKIE?
-streamlit.stop()
+#streamlit.stop()
 
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 my_cur.execute("select * from pc_rivery_db.public.fruit_load_list")
 my_data_rows = my_cur.fetchall()
-streamlit.header("The fruit load list contains:")
-streamlit.dataframe(my_data_rows)
-
 add_my_fruit = streamlit.text_input('Digite o nome da fruta que você quer')
 streamlit.write('Thanks for adding ', add_my_fruit)
 my_cur.execute("insert into fruit_load_list values ('from steamlit')")
+streamlit.header("The fruit load list contains:")
+streamlit.dataframe(my_data_rows)
 
 
