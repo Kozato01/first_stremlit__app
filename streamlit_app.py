@@ -21,7 +21,7 @@ my_fruit2 = my_fruit.set_index('Fruit')
 fruits_select= streamlit.multiselect("Pick some fruits:", list(my_fruit2.index),["Apple", "Banana"])
 fruits_show = my_fruit2.loc[fruits_select]
                       
-streamlit.dataframe(fruits_show)
+#streamlit.dataframe(fruits_show)
 
 fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
 streamlit.write('The user entered ', fruit_choice)
